@@ -1,0 +1,20 @@
+Simple Traps
+Gin Trap (Very cheap and easy, does moderate damage to legs)
+Bear Trap (cheap and does heavy damage to legs)
+
+Anti-Personnel Mines
+Directional Mine
+Blast Mine
+Fragmentation Mine
+Bounding Mine
+Tox Mine
+Incendiry Mine
+EMP Mine
+Deterrent Mine (PDM Pursuit Deterrent Munition)
+Butterfly Mine (Royal Permit Addition - Cluster Minefield)
+Minimum Metal Mine
+
+Anti-Tank Mines
+Bar Mine
+Teller Mine
+Teller EMP Mine
