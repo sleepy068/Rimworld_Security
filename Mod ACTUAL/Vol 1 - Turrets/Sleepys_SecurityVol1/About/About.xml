@@ -5,12 +5,12 @@
     <url>https://github.com/sleepy068/Rimworld_Security</url>
     <packageId>sleepy068.securityvol1</packageId>
     <supportedVersions>
-		<li>1.4</li>
+		<li>1.5</li>
     </supportedVersions>
 
     <description>
 
-[h2]Sleepy's Security - Volume 1 - Traps(v1.0.0)[/h2]
+[h2]Sleepy's Security - Volume 1 - Turrets[/h2]
 
 
 [img]https://i.imgur.com/DbnM7jC.png[/img]
@@ -50,12 +50,16 @@ https://github.com/sleepy068/Rimworld_Weapons
 
     <modDependencies>
 	<li>
+		<packageId>sleepy068.weaponscore</packageId>
+		<displayName>Sleepy's Weapons - Core</displayName>
+		<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2964374073</steamWorkshopUrl>
 	</li>
     </modDependencies>
     <modDependenciesByVersion>
     </modDependenciesByVersion>
 
     <loadAfter>
+	<li>sleepy068.weaponscore</li>
     </loadAfter>
 
     <incompatibleWith>
