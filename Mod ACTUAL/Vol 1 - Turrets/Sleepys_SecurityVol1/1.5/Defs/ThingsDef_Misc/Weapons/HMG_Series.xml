@@ -80,14 +80,31 @@
     </projectile>
   </ThingDef>
   
+  <!-- Heavy Sentry Bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SLP_HEAVYSENT</defName>
+    <label>heavy sentry bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <speed>100</speed>
+	  <stoppingPower>1.0</stoppingPower>
+	  <armorPenetrationBase>0.25</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
   <!-- ================================= Weapons ==================================== -->
-  <!-- M1919 Mounted HMG -->
-	<ThingDef ParentName="SLP_MannedTurretBase">
+  <!-- Mounted Light Machine Gun -->
+  <ThingDef ParentName="SLP_MannedTurretBase">
 		<defName>SLP_Mount_Turret_M1919_S</defName> 
-		<label>M1919 Mounted Turret</label>
-		<description>.</description>
+		<label>Mounted LMG</label>
+		<description>A simple light machine gun affixed to a mounted base.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/Mount/HMGTripod/SLP_TRIPOD1_S</texPath> 
+			<texPath>Things/Building/Security/Mount/HMGTripod/SLP_TRIPOD1_S</texPath> 
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1.5,1.5)</drawSize>
 			<damageData>
@@ -113,8 +130,8 @@
 				<fuelGizmoLabel>Ammo count</fuelGizmoLabel>
 				<outOfFuelMessage>Needs ammo</outOfFuelMessage>
 				<fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
-				<fuelCapacity>200</fuelCapacity>      <!-- 10 bursts -->
-				<fuelMultiplier>4</fuelMultiplier> <!-- 5 steel per burst, 50 per full rearm -->
+				<fuelCapacity>400</fuelCapacity>      <!-- 10 bursts -->
+				<fuelMultiplier>8</fuelMultiplier> <!-- 5 steel per burst, 50 per full rearm -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>0.33</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -123,7 +140,6 @@
 				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<fuelIconPath>UI/Overlays/SLP_ICON_RELOAD_S</fuelIconPath>
 			</li>
-			
 		</comps>
 		<costList>
 			<Steel>210</Steel>
@@ -141,12 +157,12 @@
 		-->
 	</ThingDef>
 
-	<ThingDef ParentName="BaseWeaponTurret">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>SLP_Gun_Turret_M1919_S</defName>
-    <label>M1919 Turret Gun</label>
-    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <label>LMG Turret</label>
+    <description>A simple light machine gun made to be mounted on a turret.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/HMG/SLP_USA_M1919_MNT</texPath>
+      <texPath>Things/Building/Security/HMG/SLP_USA_M1919_MNT</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <drawSize>(1,1)</drawSize>
     </graphicData>
@@ -177,13 +193,13 @@
     </verbs>
   </ThingDef>
   
-  <!-- M2HB Mounted HMG -->
-	<ThingDef ParentName="SLP_MannedTurretBase">
+  <!-- Mounted Heavy Machine Gun -->
+  <ThingDef ParentName="SLP_MannedTurretBase">
 		<defName>SLP_Mount_Turret_M2HB_S</defName> 
-		<label>M2HB Mounted Turret</label>
-		<description>.</description>
+		<label>Mounted HMG</label>
+		<description>A simple heavy machine gun affixed to a mounted base.</description>
 		<graphicData>
-			<texPath>Things/Item/Equipment/Mount/HMGTripod/SLP_TRIPOD1_S</texPath> 
+			<texPath>Things/Building/Security/Mount/HMGTripod/SLP_TRIPOD1_S</texPath> 
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(1.5,1.5)</drawSize>
 			<damageData>
@@ -209,8 +225,8 @@
 				<fuelGizmoLabel>Ammo count</fuelGizmoLabel>
 				<outOfFuelMessage>Needs ammo</outOfFuelMessage>
 				<fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
-				<fuelCapacity>100</fuelCapacity>      <!-- 10 bursts -->
-				<fuelMultiplier>2</fuelMultiplier> <!-- 5 steel per burst, 50 per full rearm -->
+				<fuelCapacity>200</fuelCapacity>      <!-- 10 bursts -->
+				<fuelMultiplier>4</fuelMultiplier> <!-- 5 steel per burst, 50 per full rearm -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<autoRefuelPercent>0.33</autoRefuelPercent>
 				<showFuelGizmo>true</showFuelGizmo>
@@ -222,7 +238,7 @@
 			
 		</comps>
 		<costList>
-			<Steel>375</Steel>
+			<Steel>310</Steel>
 			<ComponentIndustrial>8</ComponentIndustrial>
 		</costList>
 		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
@@ -237,12 +253,12 @@
 		-->
 	</ThingDef>
 
-	<ThingDef ParentName="BaseWeaponTurret">
+  <ThingDef ParentName="BaseWeaponTurret">
     <defName>SLP_Gun_Turret_M2HB_S</defName>
-    <label>M2HB Turret Gun</label>
-    <description>A simple automatic gun made to be mounted on a turret.</description>
+    <label>HMG Turret</label>
+    <description>A simple heavy machine gun made to be mounted on a turret.</description>
     <graphicData>
-      <texPath>Things/Item/Equipment/HMG/SLP_USA_M2HB_MNT</texPath>
+      <texPath>Things/Building/Security/HMG/SLP_USA_M2HB_MNT</texPath>
       <graphicClass>Graphic_Single</graphicClass>
 	  <drawSize>(1,1)</drawSize>
     </graphicData>
@@ -265,6 +281,216 @@
         <range>35.9</range>
         <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
         <burstShotCount>10</burstShotCount>
+        <soundCast>SLP_HMG_50CALALTShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <!-- Sentry Turret -->
+  <ThingDef ParentName="SLP_SentryTurretBase">
+    <defName>SLP_Sentry_Turret_Heavy_S</defName>
+    <label>sentry turret</label>
+    <description>A automatic sentry turret fitted with a heavy machine gun. Will require reloading after depleting its internal ammo and may explode if too badly damaged.</description>
+	<graphicData>
+		<texPath>Things/Building/Security/Mount/SLP_SCU_TBASE/SLP_SCU_TBASE</texPath> 
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>CutoutComplex</shaderType>
+		<drawSize>(1.25,1.25)</drawSize>
+		<drawOffset>(0.0,0.0,-0.05)</drawOffset>
+		<!--<drawOffset>(-0.05,0.0,-0.3)</drawOffset>-->
+		<damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		</damageData>
+	</graphicData>
+	<size>(2,2)</size>
+    <uiIconPath>UI/Building/SLP_SCU_HST_UIICON</uiIconPath>
+    <statBases>
+		<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret> <!-- like level 8 human shooter -->
+		<MaxHitPoints>300</MaxHitPoints>
+		<Flammability>0.25</Flammability>
+		<WorkToBuild>400</WorkToBuild>
+		<Mass>20</Mass>
+		<Beauty>-20</Beauty>
+    </statBases>
+    <costList>
+      <Steel>275</Steel>
+      <Plasteel>15</Plasteel>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+		<fuelLabel>Shots until reload</fuelLabel>
+		<fuelGizmoLabel>Ammo count</fuelGizmoLabel>
+		<outOfFuelMessage>Needs ammo</outOfFuelMessage>
+		<fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+		<fuelCapacity>240</fuelCapacity>     <!-- 40 bursts -->
+		<fuelMultiplier>2.4</fuelMultiplier> <!-- 6 steel per burst, 100 per full rearm -->
+		<initialFuelPercent>1</initialFuelPercent>
+		<autoRefuelPercent>0.25</autoRefuelPercent>
+		<showFuelGizmo>true</showFuelGizmo>
+		<minimumFueledThreshold>1</minimumFueledThreshold>
+		<factorByDifficulty>true</factorByDifficulty>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		<fuelIconPath>UI/Overlays/SLP_ICON_RELOAD_S</fuelIconPath>
+	   </li>
+    </comps>
+    <building>
+      <turretGunDef>SLP_Sentry_Gun_Heavy_S</turretGunDef>
+      <turretBurstCooldownTime>3.5</turretBurstCooldownTime>
+	  <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SLP_Sentry_Gun_Heavy_S</defName>
+    <label>sentry gun</label>
+    <description>A self-loading heavy machine gun designed to attach to a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/SLP_SCU_HST/SLP_SCU_HST</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+	  <!--<drawSize>(1.25,1.25)</drawSize>-->
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.40</AccuracyTouch>
+      <AccuracyShort>0.50</AccuracyShort>
+      <AccuracyMedium>0.60</AccuracyMedium>
+      <AccuracyLong>0.40</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_SLP_HEAVYSENT</defaultProjectile>
+        <warmupTime>0</warmupTime>
+		<minRange>2.9</minRange>
+        <range>35.9</range>
+        <ticksBetweenBurstShots>8</ticksBetweenBurstShots>
+        <burstShotCount>6</burstShotCount>
+        <soundCast>SLP_HMG_50CALALTShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <!-- Twin Sentry Turret -->
+  <ThingDef ParentName="SLP_SentryTurretBase">
+    <defName>SLP_Dual_Sentry_Turret_Heavy_S</defName>
+    <label>twin sentry turret</label>
+    <description>A automatic sentry turret fitted with two heavy machine guns. Will require reloading after depleting its internal ammo and may explode if too badly damaged. Unlike its single barrel counterpart, the dual design has slightly reduced accuracy, reduced range and slightly increased minimum engagement range.</description>
+	<graphicData>
+		<texPath>Things/Building/Security/Mount/SLP_SCU_TBASE/SLP_SCU_TBASE</texPath> 
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>CutoutComplex</shaderType>
+		<drawSize>(1.25,1.25)</drawSize>
+		<drawOffset>(0.0,0.0,-0.05)</drawOffset>
+		<!--<drawOffset>(-0.05,0.0,-0.3)</drawOffset>-->
+		<damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		</damageData>
+	</graphicData>
+	<size>(2,2)</size>
+    <uiIconPath>UI/Building/SLP_SCU_DHST_UIICON</uiIconPath>
+    <statBases>
+		<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret> <!-- like level 8 human shooter -->
+		<MaxHitPoints>300</MaxHitPoints>
+		<Flammability>0.25</Flammability>
+		<WorkToBuild>400</WorkToBuild>
+		<Mass>20</Mass>
+		<Beauty>-20</Beauty>
+    </statBases>
+    <costList>
+      <Steel>325</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>100</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+		<fuelLabel>Shots until reload</fuelLabel>
+		<fuelGizmoLabel>Ammo count</fuelGizmoLabel>
+		<outOfFuelMessage>Needs ammo</outOfFuelMessage>
+		<fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+		<fuelCapacity>240</fuelCapacity>     <!-- 40 bursts -->
+		<fuelMultiplier>2.4</fuelMultiplier> <!-- 6 steel per burst, 100 per full rearm -->
+		<initialFuelPercent>1</initialFuelPercent>
+		<autoRefuelPercent>0.25</autoRefuelPercent>
+		<showFuelGizmo>true</showFuelGizmo>
+		<minimumFueledThreshold>1</minimumFueledThreshold>
+		<factorByDifficulty>true</factorByDifficulty>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		<fuelIconPath>UI/Overlays/SLP_ICON_RELOAD_S</fuelIconPath>
+	   </li>
+    </comps>
+    <building>
+      <turretGunDef>SLP_Dual_Sentry_Gun_Heavy_S</turretGunDef>
+      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+	  <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SLP_Dual_Sentry_Gun_Heavy_S</defName>
+    <label>twin sentry gun</label>
+    <description>A self-loading twin barrel heavy machine gun designed to attach to a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/SLP_SCU_DHST/SLP_SCU_DHST</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+	  <!--<drawSize>(1.25,1.25)</drawSize>-->
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.35</AccuracyTouch>
+      <AccuracyShort>0.45</AccuracyShort>
+      <AccuracyMedium>0.55</AccuracyMedium>
+      <AccuracyLong>0.35</AccuracyLong>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_SLP_HEAVYSENT</defaultProjectile>
+        <warmupTime>0</warmupTime>
+		<minRange>3.9</minRange>
+        <range>32.9</range>
+        <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
+        <burstShotCount>12</burstShotCount>
         <soundCast>SLP_HMG_50CALALTShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
