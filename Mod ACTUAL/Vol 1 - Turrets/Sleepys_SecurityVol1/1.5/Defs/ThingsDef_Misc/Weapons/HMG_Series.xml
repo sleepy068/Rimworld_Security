@@ -97,6 +97,23 @@
     </projectile>
   </ThingDef>
   
+  <!-- Hellfire Bullet -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_SLP_HELLFIRE</defName>
+    <label>hellfire turret bullet</label>
+    <graphicData>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>7</damageAmountBase>
+      <speed>70</speed>
+	  <stoppingPower>0.5</stoppingPower>
+	  <armorPenetrationBase>0.12</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
   <!-- ================================= Weapons ==================================== -->
   <!-- Mounted Light Machine Gun -->
   <ThingDef ParentName="SLP_MannedTurretBase">
@@ -492,6 +509,111 @@
         <ticksBetweenBurstShots>4</ticksBetweenBurstShots>
         <burstShotCount>12</burstShotCount>
         <soundCast>SLP_HMG_50CALALTShot</soundCast>
+        <soundCastTail>GunTail_Light</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <consumeFuelPerShot>1</consumeFuelPerShot>
+      </li>
+    </verbs>
+  </ThingDef>
+  
+  <!-- Hellfire Turret -->
+  <ThingDef ParentName="SLP_SentryTurretBase">
+    <defName>SLP_Sentry_Turret_Hellfire_S</defName>
+    <label>hellfire turret</label>
+    <description>A automatic sentry turret fitted with quad stacked miniguns. Will require reloading after depleting its internal ammo and may explode if too badly damaged.</description>
+	<graphicData>
+		<texPath>Things/Building/Security/Mount/SLP_SCU_TBASE/SLP_SCU_TBASE</texPath> 
+		<graphicClass>Graphic_Single</graphicClass>
+		<shaderType>CutoutComplex</shaderType>
+		<drawSize>(1.5,1.5)</drawSize>
+		<drawOffset>(0.0,0.0,-0.00)</drawOffset>
+		<!--<drawOffset>(-0.05,0.0,-0.3)</drawOffset>-->
+		<damageData>
+			<rect>(0.2,0.2,0.6,0.6)</rect>
+		</damageData>
+	</graphicData>
+	<size>(2,2)</size>
+    <uiIconPath>UI/Building/SLP_SCU_HFT_UIICON</uiIconPath>
+    <statBases>
+		<ShootingAccuracyTurret>0.96</ShootingAccuracyTurret> <!-- like level 8 human shooter -->
+		<MaxHitPoints>425</MaxHitPoints>
+		<Flammability>0.25</Flammability>
+		<WorkToBuild>400</WorkToBuild>
+		<Mass>100</Mass>
+		<Beauty>-20</Beauty>
+    </statBases>
+    <costList>
+      <Steel>350</Steel>
+      <Plasteel>60</Plasteel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <wickTicks>240</wickTicks>
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+      </li>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="CompProperties_Refuelable">
+		<fuelLabel>Shots until reload</fuelLabel>
+		<fuelGizmoLabel>Ammo count</fuelGizmoLabel>
+		<outOfFuelMessage>Needs ammo</outOfFuelMessage>
+		<fuelFilter><thingDefs><li>Steel</li></thingDefs></fuelFilter>
+		<fuelCapacity>700</fuelCapacity>     <!-- 10 bursts -->
+		<fuelMultiplier>3.5</fuelMultiplier> <!-- 20 steel per burst, 200 per full rearm -->
+		<initialFuelPercent>1</initialFuelPercent>
+		<autoRefuelPercent>0.25</autoRefuelPercent>
+		<showFuelGizmo>true</showFuelGizmo>
+		<minimumFueledThreshold>1</minimumFueledThreshold>
+		<factorByDifficulty>true</factorByDifficulty>
+		<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+		<fuelIconPath>UI/Overlays/SLP_ICON_RELOAD_S</fuelIconPath>
+	   </li>
+    </comps>
+    <building>
+      <turretGunDef>SLP_Sentry_Gun_Hellfire_S</turretGunDef>
+      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+	  <paintable>true</paintable>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseWeaponTurret">
+    <defName>SLP_Sentry_Gun_Hellfire_S</defName>
+    <label>hellfire gun</label>
+    <description>A self-loading quad stacked minigun designed to attach to a turret.</description>
+    <graphicData>
+      <texPath>Things/Building/Security/SLP_SCU_HFT/SLP_SCU_HFT</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+	  <drawSize>(2.0,2.0)</drawSize>
+    </graphicData>
+    <statBases>
+      <AccuracyTouch>0.20</AccuracyTouch>
+      <AccuracyShort>0.30</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+      <DeteriorationRate>0</DeteriorationRate>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <defaultProjectile>Bullet_SLP_HELLFIRE</defaultProjectile>
+        <warmupTime>0</warmupTime>
+		<minRange>5.9</minRange>
+        <range>30.9</range>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>70</burstShotCount>
+        <soundCast>SLP_MinigunShot</soundCast>
         <soundCastTail>GunTail_Light</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
         <consumeFuelPerShot>1</consumeFuelPerShot>
