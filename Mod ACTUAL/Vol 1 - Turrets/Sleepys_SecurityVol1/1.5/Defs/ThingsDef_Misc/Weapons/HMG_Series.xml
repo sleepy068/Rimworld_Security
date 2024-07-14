@@ -159,8 +159,8 @@
 			</li>
 		</comps>
 		<costList>
-			<Steel>210</Steel>
-			<ComponentIndustrial>4</ComponentIndustrial>
+			<Steel>150</Steel>
+			<ComponentIndustrial>3</ComponentIndustrial>
 		</costList>
 		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
 		<building>
@@ -255,8 +255,8 @@
 			
 		</comps>
 		<costList>
-			<Steel>310</Steel>
-			<ComponentIndustrial>8</ComponentIndustrial>
+			<Steel>200</Steel>
+			<ComponentIndustrial>4</ComponentIndustrial>
 		</costList>
 		<resourcesFractionWhenDeconstructed>0.5</resourcesFractionWhenDeconstructed>
 		<building>
@@ -333,8 +333,7 @@
 		<Beauty>-20</Beauty>
     </statBases>
     <costList>
-      <Steel>275</Steel>
-      <Plasteel>15</Plasteel>
+      <Steel>200</Steel>
       <ComponentIndustrial>6</ComponentIndustrial>
     </costList>
     <comps>
@@ -438,8 +437,7 @@
 		<Beauty>-20</Beauty>
     </statBases>
     <costList>
-      <Steel>325</Steel>
-      <Plasteel>20</Plasteel>
+      <Steel>250</Steel>
       <ComponentIndustrial>8</ComponentIndustrial>
     </costList>
     <comps>
@@ -544,8 +542,8 @@
     </statBases>
     <costList>
       <Steel>350</Steel>
-      <Plasteel>60</Plasteel>
-      <ComponentIndustrial>16</ComponentIndustrial>
+      <Plasteel>40</Plasteel>
+      <ComponentIndustrial>11</ComponentIndustrial>
     </costList>
     <comps>
       <li Class="CompProperties_Explosive">
@@ -579,7 +577,7 @@
     </comps>
     <building>
       <turretGunDef>SLP_Sentry_Gun_Hellfire_S</turretGunDef>
-      <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
+      <turretBurstCooldownTime>4.0</turretBurstCooldownTime>
 	  <paintable>true</paintable>
     </building>
   </ThingDef>
@@ -599,7 +597,7 @@
       <AccuracyShort>0.30</AccuracyShort>
       <AccuracyMedium>0.45</AccuracyMedium>
       <AccuracyLong>0.25</AccuracyLong>
-      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>4.0</RangedWeapon_Cooldown>
       <DeteriorationRate>0</DeteriorationRate>
       <Mass>5</Mass>
       <Flammability>0</Flammability>
